@@ -16,7 +16,7 @@ terraform {
 
 resource "google_compute_instance" "order-service" {
   name         = "order-service"
-  machine_type = "e2-small"
+  machine_type = "e2-medium"
   zone         = "asia-southeast1-a"
   
   allow_stopping_for_update = true
