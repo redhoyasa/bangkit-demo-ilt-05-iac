@@ -33,3 +33,23 @@ resource "google_compute_instance" "order-service" {
     }
   }
 }
+
+resource "google_compute_instance" "delivery-service" {
+  name         = "delivery-service"
+  machine_type = "e2-medium"
+  zone         = "asia-southeast1-a"
+  
+  allow_stopping_for_update = true
+  
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-10"
+    }
+  }
+  
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
